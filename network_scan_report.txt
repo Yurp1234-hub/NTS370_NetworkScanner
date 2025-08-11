@@ -7,7 +7,7 @@ Target IP Address/Hostname: scanme.nmap.org
 ----------------------------------------
  Open Ports and Detected Services
 ----------------------------------------
-22/tcp    open     tcpwrapped
+22/tcp    open     ssh        OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
 80/tcp    open     http       Apache httpd 2.4.7 ((Ubuntu))
 9929/tcp  open     nping-echo Nping echo
 31337/tcp open     tcpwrapped
@@ -15,9 +15,10 @@ Target IP Address/Hostname: scanme.nmap.org
 ----------------------------------------
  Potential Vulnerabilities Identified
 ----------------------------------------
-CVE-2023-XXXX - Outdated Web Server
-Default Credentials - FTP Server
-CVE-2022-YYYY - Unpatched SSH Daemon
+--- NSE Script Findings ---
+No 'VULNERABLE' flags found by NSE scripts.
+
+--- Analyzing Service Versions ---
 
 ----------------------------------------
  Recommendations for Remediation
@@ -28,5 +29,5 @@ CVE-2022-YYYY - Unpatched SSH Daemon
 
 ==============================
  End of Report
-Generated on: Mon Jul 14 01:52:40 UTC 2025
+Generated on: Mon Aug 11 18:36:19 UTC 2025
 ==============================
