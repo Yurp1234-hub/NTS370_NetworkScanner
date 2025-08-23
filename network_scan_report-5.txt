@@ -1,0 +1,155 @@
+==============================
+ Network Security Scan Report
+==============================
+
+Target IP Address/Hostname: 192.168.56.102
+
+----------------------------------------
+ Open Ports and Detected Services
+----------------------------------------
+21/tcp   open  ftp         vsftpd 2.3.4
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+|       https://www.openssl.org/~bodo/ssl-poodle.pdf
+53/tcp   open  domain      ISC BIND 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+111/tcp  open  rpcbind     2 (RPC #100000)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+512/tcp  open  exec        netkit-rsh rexecd
+513/tcp  open  login       OpenBSD or Solaris rlogind
+514/tcp  open  shell       Netkit rshd
+1099/tcp open  java-rmi    GNU Classpath grmiregistry
+1524/tcp open  bindshell   Metasploitable root shell
+2049/tcp open  nfs         2-4 (RPC #100003)
+2121/tcp open  ftp         ProFTPD 1.3.1
+3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
+5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+|       https://www.openssl.org/~bodo/ssl-poodle.pdf
+|_      http://www.openssl.org/news/secadv_20140605.txt
+5900/tcp open  vnc         VNC (protocol 3.3)
+6000/tcp open  X11         (access denied)
+6667/tcp open  irc         UnrealIRCd
+8009/tcp open  ajp13       Apache Jserv (Protocol v1.3)
+8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+
+----------------------------------------
+ Potential Vulnerabilities Identified
+----------------------------------------
+--- NSE Script Findings ---
+|   VULNERABLE:
+|     State: VULNERABLE (Exploitable)
+|   VULNERABLE:
+|     State: VULNERABLE
+|   VULNERABLE:
+|     State: VULNERABLE
+|     State: VULNERABLE
+|     State: VULNERABLE
+|_  The SMTP server is not Exim: NOT VULNERABLE
+|   VULNERABLE:
+|     State: LIKELY VULNERABLE
+|   VULNERABLE:
+|     State: VULNERABLE
+|   VULNERABLE:
+|     State: VULNERABLE
+|   VULNERABLE:
+|     State: VULNERABLE
+|   VULNERABLE:
+|     State: VULNERABLE
+|   VULNERABLE:
+|     State: LIKELY VULNERABLE
+
+--- Service Version Analysis (with NVD lookups) ---
+[i] Found service: vsftpd 2.3.4 2.3.4
+
+Querying NVD for vulnerabilities in: vsftpd 2.3.4 2.3.4...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: OpenSSH 4.7p1 4.7p1
+8ubuntu1
+2.0
+
+Querying NVD for vulnerabilities in: OpenSSH 4.7p1 4.7p1
+8ubuntu1
+2.0...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: ISC BIND 9.4.2
+
+Querying NVD for vulnerabilities in: ISC BIND 9.4.2...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: Apache httpd 2.2.8
+2
+
+Querying NVD for vulnerabilities in: Apache httpd 2.2.8
+2...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: 2 (RPC 2
+100000
+
+Querying NVD for vulnerabilities in: 2 (RPC 2
+100000...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: Samba smbd 3
+4
+
+Querying NVD for vulnerabilities in: Samba smbd 3
+4...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: Samba smbd 3
+4
+
+Querying NVD for vulnerabilities in: Samba smbd 3
+4...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: 2-4 (RPC 2
+4
+100003
+
+Querying NVD for vulnerabilities in: 2-4 (RPC 2
+4
+100003...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: ProFTPD 1.3.1 1.3.1
+
+Querying NVD for vulnerabilities in: ProFTPD 1.3.1 1.3.1...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: MySQL 5.0.51a-3ubuntu5 5.0.51a
+3ubuntu5
+
+Querying NVD for vulnerabilities in: MySQL 5.0.51a-3ubuntu5 5.0.51a
+3ubuntu5...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: PostgreSQL DB 8.3.0
+8.3.7
+
+Querying NVD for vulnerabilities in: PostgreSQL DB 8.3.0
+8.3.7...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: VNC (protocol 3.3
+
+Querying NVD for vulnerabilities in: VNC (protocol 3.3...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: Apache Jserv 1.3
+
+Querying NVD for vulnerabilities in: Apache Jserv 1.3...
+  [!] Error: Failed to fetch data from NVD.
+[i] Found service: Apache Tomcat/Coyote 1.1
+
+Querying NVD for vulnerabilities in: Apache Tomcat/Coyote 1.1...
+  [!] Error: Failed to fetch data from NVD.
+
+----------------------------------------
+ Recommendations for Remediation
+----------------------------------------
+- Update all software to the latest versions.
+- Change default credentials immediately.
+- Implement a firewall.
+
+==============================
+ End of Report
+Generated on: Sat Aug 23 07:33:07 PM UTC 2025
+==============================
