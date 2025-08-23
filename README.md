@@ -1,28 +1,37 @@
-# NTS370_NetworkScanner
-This Bash script automates the process of generating a basic network security report for a specified target IP address or hostname. It utilizes `nmap` to scan for open ports and running services, then structures the findings into a human-readable report file.
+#Network Vulnerability Scanner Script
 
-##What the Script Does
+This Bash script automates the process of scanning a target host for open ports, services, and potential vulnerabilities.  
+It uses `nmap` for detection and integrates with the **National Vulnerability Database (NVD) API** to cross-reference service versions against known CVEs.  
+The script outputs a structured, human-readable report.
 
-- Accepts a single command-line argument (target IP address or hostname)
-- Validates that exactly one argument is provided
-- Performs a live network scan using `nmap -sV` to detect:
-  - Open ports
-  - Services running on those ports
-  - Service versions (if available)
-- Filters the scan output to include only open ports
-- Creates a structured report saved to `network_scan_report.txt` including:
-  - A header with the target information
-  - Detected open ports and services
-  - Placeholder sections for potential vulnerabilities and recommended remediation steps
-  - A footer with the date the scan was generated
+---
+
+##Features
+
+- **Command-line input**: Accepts a single target IP or hostname as an argument.
+- **Input validation**: Ensures exactly one argument is provided, otherwise shows usage instructions.
+- **Structured report generation**: Saves all results to `network_scan_report.txt` with clearly defined sections:
+  - Header (target details, timestamp)
+  - Open ports and services (via `nmap -sV`)
+  - Potential vulnerabilities (via NSE + NVD lookups)
+  - Recommendations
+  - Footer (end of report)
+- **Nmap Scanning**:
+  - Service and version detection (`-sV`)
+  - Vulnerability script execution (`--script vuln`)
+  - OS and additional details (optional with `-A`)
+- **Vulnerability Analysis**:
+  - **Strategy A**: Highlights NSE script results flagged as `VULNERABLE`.
+  - **Strategy B**: Extracts service names and versions, then queries the **NVD API** with `curl` and `jq`.
+  - Displays CVE ID, description, and severity score for known issues.
+- **Extensible**: New checks or additional parsing logic can be added easily.
+
+---
 
 ##Requirements
 
-- Bash (Linux, macOS, or WSL on Windows)
-- `nmap` installed on your system
+Install the following packages on your system:
 
-###Install `nmap` (if not already installed)
-
-####Debian/Ubuntu:
 ```bash
-sudo apt install nmap
+sudo apt update
+sudo apt install nmap jq curl -y
